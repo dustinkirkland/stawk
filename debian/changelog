@@ -1,5 +1,5 @@
-statistics (1.0) unreleased; urgency=medium
+statistics (1.0-0ubuntu1) artful; urgency=medium
 
   * Initial release
 
- -- Dustin Kirkland <kirkland@ubuntu.com>  Wed, 26 Jul 2017 17:42:35 -0500
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Wed, 26 Jul 2017 17:48:26 -0500
