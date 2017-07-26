@@ -1,0 +1,54 @@
+.TH stats 1 "26 July 2017" stats "stats"
+.SH NAME
+\fBstats\fP - a series of wrappers for performing basic statistic calculations on files or standard input containing numbers
+
+.SH SYNOPSIS
+\fBmin\fP [FILE]
+
+\fBmax\fP [FILE]
+
+\fBmean\fP [FILE]
+
+\fBavg\fP [FILE]
+
+\fBmedian\fP [FILE]
+
+\fBmode\fP [FILE]
+
+\fBstdev\fP [FILE]
+
+\fBhistogram\fP [FILE]
+
+\fBsummate\fP [FILE]
+
+.SH OPTIONS
+
+While none of these have options, the input may be speficied either as a FILE argument, or as standard input.
+
+.SH DESCRIPTION
+
+This suite of simple tools will perform efficient statistics calculations on either a file or standard input containing numbers (integers or floats), one per line.
+
+ * min will print the largest numeric value from input
+
+ * max will print the smallest numeric value from input
+
+ * mean (and avg) will print the arithmetic mean (average) value from input
+
+ * mode will print the most frequently occuring value from input
+
+ * median will print the middle value of the sorted input
+
+ * stdev will print the standard deviation of all values in the input
+
+ * histogram will print a reverse sorted, weighted distribution of input values
+
+ * summate will calculate the sum of all input values
+
+.SH SEE ALSO
+\fBawk\fP(1), \fBsort\fP(1), \fBuniq\fP(1)
+
+.SH AUTHOR
+This manpage and the utility were written by Dustin Kirkland <dustin.kirkland@gmail.com> for Ubuntu systems (but may be used by others).  Permission is granted to copy, distribute and/or modify this document and the utility under the terms of the Apache2 License.
+
+The complete text of the Apache2 License can be found in \fI/usr/share/common-licenses/Apache-2.0\fP on Debian/Ubuntu systems.

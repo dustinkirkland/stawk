@@ -1,0 +1,61 @@
+#!/bin/sh
+#
+# stats: perform statistical calculations on a file or standard input
+#        containing numbers
+#
+# Copyright 2017 Dustin Kirkland <dustin.kirkland@gmail.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
+set -e
+
+# Work from a temp file, which we'll clean up when done
+file=$(mktemp)
+trap "rm -f ${file}" HUP INT QUIT ILL TRAP KILL BUS TERM
+
+# Handle either a file as argument, or standard input
+if [ -f "$1" ]; then
+	cat "$1" >"$file"
+else
+	cat /dev/stdin >"$file"
+fi
+
+# Determine our operating mode by how we were called
+case "$0" in
+	*min)
+		awk -v min=0 'NR == 1 || $1 < min {line = $0; min = $1} END {print min}' "$file"
+	;;
+	*max)
+		awk -v max=0 'NR == 1 || $1 > max {line = $0; max = $1} END {print max}' "$file"
+	;;
+	*mean|*avg)
+		awk '{ sum += $1; n++ } END { if (n > 0) print sum / n; }' "$file"
+	;;
+	*median)
+		sort -g "$file" | awk '{ a[i++]=$1; } END { print a[int(i/2)]; }'
+	;;
+	*mode)
+		sort -g "$file" | uniq -c | sort -r -g | head -n1 | awk '{print $2}'
+	;;
+	*stdev|*stddev)
+		awk '{ x+=$0; y+=$0^2 } END { print sqrt(y/NR-(x/NR)^2) }' "$file"
+	;;
+	*histogram)
+		sort -g "$file" | uniq -c | sort -r -g
+	;;
+	*summate)
+		awk '{ sum += $1 } END { print sum }' "$file"
+	;;
+esac
+rm -f "$file"

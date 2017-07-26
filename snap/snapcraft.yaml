@@ -1,0 +1,23 @@
+name: statistics
+version: 1.0
+summary: run standard statistics operations on a file or stdin
+description: >
+    This package provides a number of useful utilites which can efficiently
+    perform statistic calculations on files or standard input containing
+    numbers, integers or floats. This includes min, max, mean, avg, median,
+    mode, stdev, histogram, summate.
+confinement: classic
+grade: stable
+
+parts:
+  statistics:
+    plugin: nil
+    stage-packages: [statistics]
+    stage:
+        - -bin/
+    snap:
+        - -bin/stats
+
+apps:
+   statistics:
+     command: stats
