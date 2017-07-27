@@ -11,7 +11,7 @@ stawk (1.1) unreleased; urgency=medium
     bin/min, === removed symlink bin/mode, === removed symlink
     bin/stddev, === removed symlink bin/stdev, === removed symlink
     bin/summate, share/man/man1/stats.1 => share/man/man1/stawk.1, ===
-    target is ustawk, === target was ustats:
+    target is ustawk, === target was ustats, snap/*:
     - rename the project because "statistics" was deemed too generic
 
  -- Dustin Kirkland <kirkland@ubuntu.com>  Wed, 26 Jul 2017 17:48:29 -0500

@@ -1,4 +1,4 @@
-name: statistics
+name: stawk
 version: 1.0
 summary: run standard statistics operations on a file or stdin
 description: >
@@ -10,14 +10,14 @@ confinement: classic
 grade: stable
 
 parts:
-  statistics:
+  stawk:
     plugin: nil
-    stage-packages: [statistics]
+    stage-packages: [stawk]
     stage:
         - -bin/
     snap:
-        - -bin/stats
+        - -bin/stawk
 
 apps:
-   statistics:
-     command: stats
+   stawk:
+     command: stawk
