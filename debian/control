@@ -1,15 +1,15 @@
-Source: statistics
+Source: stawk
 Section: admin
 Priority: optional
 Maintainer: Dustin Kirkland <kirkland@ubuntu.com>
 Build-Depends: debhelper (>= 7.0.50~)
 Standards-Version: 3.9.5
-Homepage: http://launchpad.net/statistics
+Homepage: http://launchpad.net/stawk
 
-Package: statistics
+Package: stawk
 Architecture: all
-Depends: ${misc:Depends}
-Description: run standard statistics operations on a file or stdin
+Depends: ${misc:Depends}, gawk
+Description: run standard statistics operations on a file or stdin using awk
  This package provides a number of useful utilites which can efficiently
  perform statistic calculations on files or standard input containing
  numbers (integers or floats). This includes: min, max, mean, avg, median,
