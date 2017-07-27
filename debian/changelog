@@ -1,4 +1,4 @@
-stawk (1.1) unreleased; urgency=medium
+stawk (1.1-0ubuntu1) artful; urgency=medium
 
   * === added symlink bin/avg, === added symlink bin/histogram, ===
     added symlink bin/max, === added symlink bin/mean, === added symlink
@@ -14,7 +14,7 @@ stawk (1.1) unreleased; urgency=medium
     target is ustawk, === target was ustats, snap/*:
     - rename the project because "statistics" was deemed too generic
 
- -- Dustin Kirkland <kirkland@ubuntu.com>  Wed, 26 Jul 2017 17:48:29 -0500
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Thu, 27 Jul 2017 12:55:13 -0500
 
 statistics (1.0-0ubuntu1) artful; urgency=medium
 
