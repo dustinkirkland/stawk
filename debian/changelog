@@ -1,3 +1,9 @@
+stawk (1.2) unreleased; urgency=medium
+
+  * UNRELEASED
+
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Thu, 27 Jul 2017 12:55:15 -0500
+
 stawk (1.1-0ubuntu1) artful; urgency=medium
 
   * === added symlink bin/avg, === added symlink bin/histogram, ===
